@@ -127,8 +127,8 @@ class tabbar extends StatelessWidget {
              color: ColorConstant.primarycolor,
              borderRadius: BorderRadius.circular(10),
           ),
-         
-           child: TabBar(
+          
+         child: TabBar(
             unselectedLabelColor: Colors.white,
             unselectedLabelStyle: TextStyle(
               fontWeight: FontWeight.normal,
@@ -138,28 +138,20 @@ class tabbar extends StatelessWidget {
               fontWeight: FontWeight.bold,
              ),
              labelColor: Colors.white,
-             
-             
-             indicator: BoxDecoration(
+              indicator: BoxDecoration(
                borderRadius: BorderRadius.circular(10),
                color: ColorConstant.grey
-               
-             
-             ),
+                ),
              dividerHeight: 0,
              tabs:[
              Tab(
                text: "Activity",
              ),
-             
-             Tab(
+              Tab(
                text: "Payments",
              )
            ]),
-           
-         ),
-        
-        
+           ),    
        ],
      ));
    
