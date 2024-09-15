@@ -100,10 +100,69 @@ class Walletpage extends StatelessWidget {
                 )
                 
               ],
-            )
+            ),
+            SizedBox(height:20),
+            tabbar()
+          
           ],
         ),
       ),
     );
   }
 }
+
+class tabbar extends StatelessWidget {
+  const tabbar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 2,
+     child: Column(
+       children: [
+         Container(
+          decoration: BoxDecoration(
+             color: ColorConstant.primarycolor,
+             borderRadius: BorderRadius.circular(10),
+          ),
+         
+           child: TabBar(
+            unselectedLabelColor: Colors.white,
+            unselectedLabelStyle: TextStyle(
+              fontWeight: FontWeight.normal,
+            ),
+             indicatorSize: TabBarIndicatorSize.tab,
+             labelStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+             ),
+             labelColor: Colors.white,
+             
+             
+             indicator: BoxDecoration(
+               borderRadius: BorderRadius.circular(10),
+               color: ColorConstant.grey
+               
+             
+             ),
+             dividerHeight: 0,
+             tabs:[
+             Tab(
+               text: "Activity",
+             ),
+             
+             Tab(
+               text: "Payments",
+             )
+           ]),
+           
+         ),
+        
+        
+       ],
+     ));
+   
+  }
+}
+
