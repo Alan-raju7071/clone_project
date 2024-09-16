@@ -1,25 +1,25 @@
 
 import 'package:clone_project/UTILIS/constant/color_constant.dart';
-import 'package:clone_project/view/home/home.dart';
-import 'package:clone_project/view/home3/home3.dart';
+import 'package:clone_project/view/homepage/homepage.dart';
+import 'package:clone_project/view/profilepage/profilepage.dart';
 import 'package:clone_project/view/invtepage/invitepage.dart';
 import 'package:clone_project/view/walletpage/walletpage.dart';
 import 'package:flutter/material.dart';
 
-class Home1 extends StatefulWidget {
-  const Home1({super.key});
+class Bottomnavigationbar extends StatefulWidget {
+  const Bottomnavigationbar({super.key});
 
   @override
-  State<Home1> createState() => _Home1State();
+  State<Bottomnavigationbar> createState() => _BottomnavigationbarState();
 }
 
-class _Home1State extends State<Home1> {
+class _BottomnavigationbarState extends State<Bottomnavigationbar> {
   int selectedTab=0;
   List sreens=[
-    Home(),
+    Homepage(),
     Walletpage(),
     Invitepage(),
-    Home3()
+    Profilepage()
     
   
     
