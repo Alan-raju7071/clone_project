@@ -20,13 +20,15 @@ class Invitepage extends StatelessWidget {
                     ),
           ),
           SizedBox(height: 30),
-          Container(
-            width: double.infinity,
-            height: 300,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image:AssetImage("asset/images/download__1_-removebg-preview.png")),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              height: 300,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image:AssetImage("asset/images/download__1_-removebg-preview.png")),
+              ),
             ),
           ),
          
