@@ -1,16 +1,5 @@
 
-
-
-
-
-
-
-
-
-
-
-import 'package:clone_project/view/prifiledetails/profiledetails.dart';
-
+import 'package:clone_project/view/splash/splash_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -21,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Profiledetails()
+      home: SplashScreen()
       
     );
   }

@@ -6,7 +6,8 @@ class Walletpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return DefaultTabController(length: 2, child: 
+    Scaffold(
       backgroundColor: ColorConstant.backgroundColor,
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -28,7 +29,7 @@ class Walletpage extends StatelessWidget {
                       width: 30,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFF00c853),
+                     color: ColorConstant.green,
                       ),
                     )
                   ],
@@ -59,7 +60,7 @@ class Walletpage extends StatelessWidget {
               width: double.infinity,
               
               decoration: BoxDecoration(
-                 color: Color(0xFF00c853),
+                  color: ColorConstant.green,
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Text("Cash out",
@@ -67,7 +68,7 @@ class Walletpage extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 15,
-
+                        
               ),
               ),
             ),
@@ -102,11 +103,152 @@ class Walletpage extends StatelessWidget {
               ],
             ),
             SizedBox(height:20),
-            tabbar()
-          
+            tabbar(),
+            SizedBox(height:10),
+            
+            Expanded(
+              child: TabBarView(children: [
+                Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Text("September",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 15,
+                        ),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: ColorConstant.primarycolor,
+
+                        ),
+                        child: Column(
+                          
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.check_box_outlined, color: Colors.white),
+                                SizedBox(width: 10),
+                                Text("Survey completes",
+                                  style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 12,
+                      ),
+                                ),
+                                Spacer(),
+                                Text("+\$0.03",
+                                 style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold
+                      ),
+                                ),
+                             
+                              ],
+                            ),
+                               Divider(
+                                  color: ColorConstant.grey,
+                                ),
+                              Row(
+                              children: [
+                                Icon(Icons.check_box_outlined,color: Colors.white),
+                                 SizedBox(width: 10),
+                                Text("Survey completes",
+                                  style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 12,
+                      ),
+                                ),
+                                 Spacer(),
+                                Text("+\$0.03",
+                                 style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold
+                      ),
+                                ),
+                                
+                              ],
+                            ),
+                               Divider(
+                                  color: ColorConstant.grey,
+                                ),
+                              Row(
+                              children: [
+                                Icon(Icons.check_box_outlined,color: Colors.white),
+                                 SizedBox(width: 10),
+                                Text("Survey completes",
+                                  style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 12,
+                      ),
+                                ),
+                                 Spacer(),
+                                Text("+\$0.03",
+                                 style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold
+                      ),
+                                ),
+                                
+                              ],
+                            ),
+
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Container(
+                          width: double.infinity,
+                            padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: ColorConstant.primarycolor,
+                        
+                          ),
+                          child: Text("All Activity",
+                          textAlign: TextAlign.center,
+                            style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 15,
+                          ),
+                          ),
+                          
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Center(
+                  child: Container(
+                    child: Text("No Payments Yet",
+                    style: TextStyle(
+                      color: ColorConstant.grey,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
+                    ),
+                    ),
+                  ),
+                ),
+              ]),
+            )
           ],
         ),
       ),
+    ),
     );
   }
 }
@@ -118,42 +260,41 @@ class tabbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-     child: Column(
-       children: [
-         Container(
+    return Column(
+      children: [
+        Container(
           decoration: BoxDecoration(
-             color: ColorConstant.primarycolor,
-             borderRadius: BorderRadius.circular(10),
+            color: ColorConstant.primarycolor,
+            borderRadius: BorderRadius.circular(10)
           ),
-          
-         child: TabBar(
-            unselectedLabelColor: Colors.white,
-            unselectedLabelStyle: TextStyle(
-              fontWeight: FontWeight.normal,
-            ),
-             indicatorSize: TabBarIndicatorSize.tab,
-             labelStyle: TextStyle(
-              fontWeight: FontWeight.bold,
+          child: TabBar(
+             unselectedLabelColor: Colors.white,
+             unselectedLabelStyle: TextStyle(
+               fontWeight: FontWeight.normal,
              ),
-             labelColor: Colors.white,
-              indicator: BoxDecoration(
-               borderRadius: BorderRadius.circular(10),
-               color: ColorConstant.grey
-                ),
-             dividerHeight: 0,
-             tabs:[
-             Tab(
-               text: "Activity",
-             ),
+              indicatorSize: TabBarIndicatorSize.tab,
+              labelStyle: TextStyle(
+               fontWeight: FontWeight.bold,
+              ),
+              labelColor: Colors.white,
+               indicator: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: ColorConstant.grey
+                 ),
+              dividerHeight: 0,
+              tabs:[
               Tab(
-               text: "Payments",
-             )
-           ]),
-           ),    
-       ],
-     ));
+                text: "Activity",
+              ),
+               Tab(
+                text: "Payments",
+              )
+            ]),
+        ),
+          
+           
+      ]  
+    );
    
   }
 }

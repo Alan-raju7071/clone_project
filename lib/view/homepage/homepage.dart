@@ -31,7 +31,7 @@ class Homepage extends StatelessWidget {
                   Container(
                     
                     decoration: BoxDecoration(
-                      color: Color(0xFF00c853),
+                       color: ColorConstant.green,
                       borderRadius: BorderRadius.circular(5)
                     ),
                     child: Padding(
