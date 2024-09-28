@@ -1,6 +1,7 @@
 
 
-import 'package:clone_project/view/login_screen/login_screen.dart';
+import 'package:clone_project/view/checkboxpage2/checkboxpage2.dart';
+
 
 
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen()
+      home: Checkboxpage2()
       
     );
   }

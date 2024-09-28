@@ -8,6 +8,8 @@ class Checkedboxpage1 extends StatefulWidget {
 }
 
 class _Checkedboxpage1State extends State<Checkedboxpage1> {
+  String? gender;
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,99 +31,145 @@ class _Checkedboxpage1State extends State<Checkedboxpage1> {
               
               
               children: [
-                Row(
-                  children: [
-                     Radio(value: true, groupValue: "", onChanged: (value) {
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child:
+                       RadioListTile(
+                        title: Text("Employed full-time"),
+                        value: "Employed full-time",
+                        groupValue: gender,
+                         onChanged: (value) {
+                           gender=value;
+                           setState(() {
+                         });
+                         },
+                       ),
+                       ),
+                 Padding(
+                   padding: const EdgeInsets.all(8.0),
+                   child: 
+                      RadioListTile(value: "Employed part-time",
+                      title:   Text("Employed part-time"),
+                       groupValue: gender,
+                        onChanged: (value) {
+                          gender=value;
+                          setState(() {
+                            
+                          });
+                        
+                      },),
                       
-                    },),
                     
-                    Text("Employed full-time"),
-                     
-                  ],
-                ),
-                 Row(
-                  children: [
-                    Radio(value: true, groupValue: "", onChanged: (value) {
+                  
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.all(8.0),
+                   child:
+                       RadioListTile(
+                        title: Text("self-employed full-time"),
+                        value: "self-employed full-time", groupValue: gender, onChanged: (value) {
+                          gender=value;
+                          setState(() {
+                            
+                          });
+
+                        
+                      },),
                       
-                    },),
+               
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.all(8.0),
+                   child: 
+                       RadioListTile(
+                        title:Text("self-employed part-time"), 
+                        value: "self-employed part-time", groupValue: gender, onChanged: (value) {
+                          gender=value;
+                          setState(() {
+                            
+                          });
+                        
+                      },),
+                      
+                       
+                  
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.all(8.0),
+                   child: 
+                       RadioListTile(
+                        title:  Text("Active military"),
+                        value: "Active military", groupValue: gender, onChanged: (value) {
+                          gender=value;
+                          setState(() {
+                            
+                          });
+                        
+                      },),
+                     
+                       
+                   
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.all(8.0),
+                   child: RadioListTile(
+                    title: Text("inactive military"),
+                    value: "inactive military", groupValue: gender, onChanged: (value) {
+                      gender=value;
+                      setState(() {
+                        
+                      });
                     
-                    Text("Employed part-time"),
-                     
-                  ],
-                ),
-                 Row(
-                  children: [
-                     Radio(value: true, groupValue: "", onChanged: (value) {
-                      
-                    },),
-                    Text("self-employed full-time"),
-                     
-                  ],
-                ),
-                 Row(
-                  children: [
-                     Radio(value: true, groupValue: "", onChanged: (value) {
-                      
-                    },),
-                    Text("self-employed part-time"),
-                     
-                  ],
-                ),
-                 Row(
-                  children: [
-                     Radio(value: true, groupValue: "", onChanged: (value) {
-                      
-                    },),
-                    Text("Active military"),
-                     
-                  ],
-                ),
-                 Row(
-                  children: [
-                     Radio(value: true, groupValue: "", onChanged: (value) {
-                      
-                    },),
-                    Text("inactive military"),
-                     
-                  ],
-                ),
-                 Row(
-                  children: [
-                     Radio(value: true, groupValue: "", onChanged: (value) {
-                      
-                    },),
-                    Text("temporary unemployed"),
-                     
-                  ],
-                ),
-                 Row(
-                  children: [
-                     Radio(value: true, groupValue: "", onChanged: (value) {
-                      
-                    },),
-                    Text("Full-time homemaker"),
-                     
-                  ],
-                ),
-                 Row(
-                  children: [
-                     Radio(value: true, groupValue: "", onChanged: (value) {
-                      
-                    },),
-                    Text("Retired"),
-                     
-                  ],
-                ),
-                 Row(
-                  children: [
-                     Radio(value: true, groupValue: "", onChanged: (value) {
-                      
-                    },),
-                    Text("student")
+                                         },),
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.all(8.0),
+                   child: RadioListTile(
+                    title: Text("temporary unemployed"),
+                    value: "temporary unemployed", groupValue: gender, onChanged: (value) {
+                      gender=value;
+                      setState(() {
+                        
+                      });
                     
-                     
-                  ],
-                ),
+                                         },),
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.all(8.0),
+                   child: RadioListTile(
+                    title:  Text("Full-time homemaker"),
+                    value: "Full-time homemaker", groupValue: gender, onChanged: (value) {
+                      gender=value;
+                      setState(() {
+                        
+                      });
+                    
+                                         },),
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.all(8.0),
+                   child: RadioListTile(
+                    title: Text("Retired"),
+                    value: "Retired", groupValue: gender, onChanged: (value) {
+                      gender=value;
+                      setState(() {
+                        
+                      });
+                    
+                                         },),
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.all(8.0),
+                   child: RadioListTile(
+                    title:  Text("student"),
+                    value: "student", groupValue: gender, onChanged: (value) {
+                      gender=value;
+                      setState(() {
+                        
+                      });
+                    
+                                         },),
+                 ),
                 
                 
                 
