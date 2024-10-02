@@ -1,6 +1,17 @@
 
 
-import 'package:clone_project/view/checkboxpage2/checkboxpage2.dart';
+
+
+
+
+
+
+import 'package:clone_project/view/splash/splash_screen.dart';
+
+
+
+
+
 
 
 
@@ -16,7 +27,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Checkboxpage2()
+      home:SplashScreen()
       
     );
   }

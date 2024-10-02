@@ -1,4 +1,6 @@
 import 'package:clone_project/UTILIS/constant/color_constant.dart';
+import 'package:clone_project/view/allactivitypage/allactivitypage.dart';
+import 'package:clone_project/view/cashoutpage/cashout.dart';
 import 'package:flutter/material.dart';
 
 class Walletpage extends StatelessWidget {
@@ -55,23 +57,18 @@ class Walletpage extends StatelessWidget {
                       ),
             ),
             SizedBox(height: 30),
-            Container(
-              padding: EdgeInsets.all(10),
-              width: double.infinity,
-              
-              decoration: BoxDecoration(
-                  color: ColorConstant.green,
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: Text("Cash out",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 15,
-                        
-              ),
-              ),
-            ),
+
+            
+            InkWell(
+              onTap: () {
+                Navigator.push(context, 
+                 MaterialPageRoute(builder: (context) => Cashout(),));
+              },
+               child: cashout(),
+               ),
+
+
+
             SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -108,147 +105,208 @@ class Walletpage extends StatelessWidget {
             
             Expanded(
               child: TabBarView(children: [
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: Text("September",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 15,
-                        ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: ColorConstant.primarycolor,
+                 tabbar_activity_container(),
 
-                        ),
-                        child: Column(
-                          
-                          children: [
-                            Row(
-                              children: [
-                                Icon(Icons.check_box_outlined, color: Colors.white),
-                                SizedBox(width: 10),
-                                Text("Survey completes",
-                                  style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w300,
-                        fontSize: 12,
-                      ),
-                                ),
-                                Spacer(),
-                                Text("+\$0.03",
-                                 style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                      ),
-                                ),
-                             
-                              ],
-                            ),
-                               Divider(
-                                  color: ColorConstant.grey,
-                                ),
-                              Row(
-                              children: [
-                                Icon(Icons.check_box_outlined,color: Colors.white),
-                                 SizedBox(width: 10),
-                                Text("Survey completes",
-                                  style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w300,
-                        fontSize: 12,
-                      ),
-                                ),
-                                 Spacer(),
-                                Text("+\$0.03",
-                                 style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                      ),
-                                ),
-                                
-                              ],
-                            ),
-                               Divider(
-                                  color: ColorConstant.grey,
-                                ),
-                              Row(
-                              children: [
-                                Icon(Icons.check_box_outlined,color: Colors.white),
-                                 SizedBox(width: 10),
-                                Text("Survey completes",
-                                  style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w300,
-                        fontSize: 12,
-                      ),
-                                ),
-                                 Spacer(),
-                                Text("+\$0.03",
-                                 style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                      ),
-                                ),
-                                
-                              ],
-                            ),
-
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: Container(
-                          width: double.infinity,
-                            padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: ColorConstant.primarycolor,
-                        
-                          ),
-                          child: Text("All Activity",
-                          textAlign: TextAlign.center,
-                            style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 15,
-                          ),
-                          ),
-                          
-                        ),
-                      )
-                    ],
-                  ),
-                ),
                 Center(
-                  child: Container(
-                    child: Text("No Payments Yet",
-                    style: TextStyle(
-                      color: ColorConstant.grey,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold
-                    ),
-                    ),
-                  ),
-                ),
+ child: tabbar_payments_container(),
+ ),
               ]),
             )
+
+
+
+
+
           ],
         ),
       ),
     ),
+    );
+  }
+}
+
+class tabbar_payments_container extends StatelessWidget {
+  const tabbar_payments_container({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text("No Payments Yet",
+      style: TextStyle(
+        color: ColorConstant.grey,
+        fontSize: 20,
+        fontWeight: FontWeight.bold
+      ),
+      ),
+    );
+  }
+}
+
+class tabbar_activity_container extends StatelessWidget {
+  const tabbar_activity_container({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Text("September",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.normal,
+              fontSize: 15,
+            ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: ColorConstant.primarycolor,
+    
+            ),
+            child: Column(
+              
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.check_box_outlined, color: Colors.white),
+                    SizedBox(width: 10),
+                    Text("Survey completes",
+                      style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w300,
+            fontSize: 12,
+          ),
+                    ),
+                    Spacer(),
+                    Text("+\$0.03",
+                     style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.bold
+          ),
+                    ),
+                 
+                  ],
+                ),
+                   Divider(
+                      color: ColorConstant.grey,
+                    ),
+                  Row(
+                  children: [
+                    Icon(Icons.check_box_outlined,color: Colors.white),
+                     SizedBox(width: 10),
+                    Text("Survey completes",
+                      style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w300,
+            fontSize: 12,
+          ),
+                    ),
+                     Spacer(),
+                    Text("+\$0.03",
+                     style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.bold
+          ),
+                    ),
+                    
+                  ],
+                ),
+                   Divider(
+                      color: ColorConstant.grey,
+                    ),
+                  Row(
+                  children: [
+                    Icon(Icons.check_box_outlined,color: Colors.white),
+                     SizedBox(width: 10),
+                    Text("Survey completes",
+                      style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w300,
+            fontSize: 12,
+          ),
+                    ),
+                     Spacer(),
+                    Text("+\$0.03",
+                     style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.bold
+          ),
+                    ),
+                    
+                  ],
+                ),
+    
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(context,
+                 MaterialPageRoute(builder:(context) => Allactivitypage(),));
+              },
+              child: Container(
+                width: double.infinity,
+                  padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: ColorConstant.primarycolor,
+              
+                ),
+                child: Text("All Activity",
+                textAlign: TextAlign.center,
+                  style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.normal,
+                  fontSize: 15,
+                ),
+                ),
+                
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class cashout extends StatelessWidget {
+  const cashout({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(10),
+      width: double.infinity,
+      
+      decoration: BoxDecoration(
+          color: ColorConstant.green,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Text("Cash out",
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 15,
+                
+      ),
+      ),
     );
   }
 }

@@ -122,6 +122,7 @@ class Cashout extends StatelessWidget {
 
     ];
     return Scaffold(
+       appBar: AppBar(),
       backgroundColor:ColorConstant.backgroundColor,
       body: Padding(
         padding: const EdgeInsets.all(10),

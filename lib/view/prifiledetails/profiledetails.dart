@@ -7,6 +7,7 @@ class Profiledetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: ColorConstant.backgroundColor,
       body: SingleChildScrollView(
         child: Padding(

@@ -32,6 +32,7 @@ bool _showData = false;
   }
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: ColorConstant.backgroundColor,
       body: Padding(
         padding: const EdgeInsets.all(10),
