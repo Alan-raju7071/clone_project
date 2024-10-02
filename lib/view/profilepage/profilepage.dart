@@ -3,6 +3,7 @@ import 'package:clone_project/view/delect/delect.dart';
 import 'package:clone_project/view/help/help.dart';
 import 'package:clone_project/view/invitactioncode/invitactioncode.dart';
 import 'package:clone_project/view/login_screen/login_screen.dart';
+import 'package:clone_project/view/notificationpage/notificationpage.dart';
 import 'package:clone_project/view/prifiledetails/profiledetails.dart';
 import 'package:flutter/material.dart';
 
@@ -174,12 +175,18 @@ class notificatoin_location_container extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Notifications",
-               style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w200,
-              color: Colors.white,
-                                ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                   MaterialPageRoute(builder:(context) => Notificationpage(),));
+                },
+                child: Text("Notifications",
+                 style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w200,
+                color: Colors.white,
+                                  ),
+                ),
               ),
                 Text("Disable",
           style: TextStyle(

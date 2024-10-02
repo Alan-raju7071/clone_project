@@ -1,21 +1,5 @@
 
-
-
-
-
-
-
-
 import 'package:clone_project/view/splash/splash_screen.dart';
-
-
-
-
-
-
-
-
-
 import 'package:flutter/material.dart';
 String? savedemail;
 String? savedpassword;
