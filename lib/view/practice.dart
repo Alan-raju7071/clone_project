@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
           onPressed: _toggleContainer,
           child: Text('Show/Hide Container'),
         ),
-        SizedBox(height: 20), // Add spacing between button and container
+        SizedBox(height: 20), 
         _isVisible
             ? Container(
                 width: 200,
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.blue,
                 child: Center(child: Text('Hello!')),
               )
-            : Container(), // If false, return an empty container
+            : Container(), // 
       ],
     );
   }
